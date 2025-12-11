@@ -1,8 +1,6 @@
 import db from "#db/client";
-import {   } from "#db/queries/";
-import {   } from "#db/queries/";
-import {   } from "#db/queries/";
-import { faker } from "@faker-js/faker";
+import {createStudent} from "#db/queries/";
+ import { faker } from "@faker-js/faker";
 
 
 await db.connect();
@@ -12,6 +10,13 @@ console.log("🌱 Database seeded.");
 
 
 async function seed() {
+    for (let i = 0; i < 50; i++) {
+        const username = faker.internet.userName();
+        const email = faker.internet.email();
+        const password = "password123";
+        await createStudent(username, email, password);
+    }
+
    
 };
    
