@@ -1,12 +1,8 @@
-
 import express from "express";
 const router = express.Router();
 export default router;
-
-
-import { createStudent, getStudent  } from "#db/queries/mood";
+import { createStudent, getStudent  } from "#db/queries/student";
  
-
 router
 .route("/").get(async (req, res) => {
   try {
@@ -16,8 +12,6 @@ router
     res.status(500).send("Server error.");
   }
 });
-
-
 router.route("/:id").get(async (req, res) => {
   try {
     const student = await createStudent(req.params.id);
@@ -27,7 +21,3 @@ router.route("/:id").get(async (req, res) => {
     res.status(500).send("Server error.");
   }
 });
-
- 
-
- 

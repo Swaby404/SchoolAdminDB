@@ -10,7 +10,7 @@ console.log("🌱 Database seeded.");
 
 
 async function seed() {
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 10; i++) {
         const username = faker.internet.userName();
         const email = faker.internet.email();
         const password = "password123";
