@@ -1,7 +1,7 @@
 import db from "#db/client";
 
 
-export default async function createStudent(firstName, lastName, major, year) {
+export default async function createStudent(first_name, last_name, major, year) {
   // Implementation for creating a student in the database
   //try catch!
   const sql = `
@@ -11,7 +11,7 @@ export default async function createStudent(firstName, lastName, major, year) {
       ($1, $2, $3, $4)
     RETURNING *
 `;
-const values = [firstName, lastName, major, year];
+const values = [first_name, last_name, major, year];
 try {
   const {
     rows: [student],

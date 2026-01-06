@@ -1,5 +1,6 @@
 import db from "#db/client";
 import {createStudent} from "#db/queries/";
+import {createUser} from "#db/queries/";
  import { faker } from "@faker-js/faker";
 
 
@@ -10,13 +11,15 @@ console.log("🌱 Database seeded.");
 
 
 async function seed() {
-    for (let i = 0; i < 10; i++) {
-        const username = faker.internet.userName();
-        const email = faker.internet.email();
-        const password = "password123";
-        await createStudent(username, email, password);
-    }
+//create user that will be used to access student data
+const users = await createUser("heartseeker@lo.ve", "password123");
+//create student profile that displays student first, last name, major, year
+for (let i = 0; i < 10; i++) {
+    await createStudent(faker.name.firstName(), faker.name.lastName(), faker.helpers.arrayElement(['Computer Science', 'Biology', 'Business', 'Art', 'History']), faker.helpers.arrayElement(['Freshman', 'Sophomore', 'Junior', 'Senior']));
 
-   
-};
+
+     
+
+
+}}
    

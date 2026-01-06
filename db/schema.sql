@@ -10,11 +10,13 @@ CREATE TABLE users (
 
 CREATE TABLE students (
     id SERIAL PRIMARY KEY,
-    student NAME NOT NULL,
-    Year INT NOT NULL,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    year INT NOT NULL,
     major TEXT NOT NULL
-)
 
+);
+    
 
 
 

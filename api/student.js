@@ -4,7 +4,7 @@ export default router;
 import { createStudent, getStudent  } from "#db/queries/student";
  
 router
-.route("/").get(async (req, res) => {
+.route("/").get(async (_, res) => {
   try {
     const students = await getStudent();
     res.send(students);
